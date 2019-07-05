@@ -4,6 +4,10 @@ Chengxin Yu
 
 chy220@lehigh.edu
 
+---
+This program is specified for my summer research purpose during 2019 in Sinclair Lab, Lehigh University.
+---
+
 Run the main.m to proceed.
 
 This package can be used to automate the process of copying data from Ocean View to 
