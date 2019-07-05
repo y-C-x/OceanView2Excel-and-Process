@@ -35,19 +35,34 @@ function R_W_function(filename,currentSet)
         xlswrite(filename,str(1),'0 mA','E2');
     end
     
-
-    for index = 1 : length(currentSet)
+    index = 1;
+    while index <= length(currentSet)
         fprintf('Waiting for data under current %d mA\n', currentSet(index));
         instruc = input('Hit return to confirm copy...','s');
+        
         if strcmp(instruc,'Q')
             disp(exitMsg);
             return;
         end
-        disp('copying data to excel.....')
-        Ocean_Raw = paste;
-        %     writecell(Ocean_Raw,filename,'Sheet',string([current{index},'mA']))
-        xlswrite(filename,Ocean_Raw,sprintf('%d mA', currentSet(index)))
-        disp('copy done!')
+        
+        if strcmp(instruc,'Rewrite')
+            I = input('Type in the current(mA) you want to rewrite: ');
+            fprintf('Waiting for data under current %d mA\n', I);
+            input('Hit return to confirm copy...','s');
+            disp('copying data to excel.....')
+            Ocean_Raw = paste;
+            xlswrite(filename,Ocean_Raw,sprintf('%d mA', I));
+            disp('copy done!')
+            index = index - 1;
+        else
+            disp('copying data to excel.....')
+            Ocean_Raw = paste;
+            %     writecell(Ocean_Raw,filename,'Sheet',string([current{index},'mA']))
+            xlswrite(filename,Ocean_Raw,sprintf('%d mA', currentSet(index)))
+            disp('copy done!')
+        end
+        
+        index = index + 1;
     end
     disp('All current sets are measured!')
     
