@@ -15,13 +15,14 @@ Data process follows the specific standard given by the instructors.
 
 
 update Ver. 8.1
-=================================
+
+---
 New feature:
 
 Allow users to rewrite the data during measurement if they miss or copy the wrong 
 data from Ocean View
 
-==================================
+---
 
 Run the main.m to proceed.
 
