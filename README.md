@@ -1,4 +1,4 @@
-OceanView2Excel and Process Ver.8.1 2019.7.5
+OceanView2Excel and Process Ver.8.2 2019.7.5
 
 Chengxin Yu
 
@@ -14,14 +14,15 @@ Data process follows the specific standard given by the instructors.
 ---
 
 
-update Ver. 8.1
+update Ver. 8.1 & 8.2
 
 ---
 New feature:
 
-Allow users to rewrite the data during measurement if they miss or copy the wrong 
+* Allow users to rewrite the data during measurement if they miss or copy the wrong 
 data from Ocean View
 
+* Change the filename of processed file from 'processing' to 'processed'
 ---
 
 Run the main.m to proceed.
