@@ -5,7 +5,10 @@ Chengxin Yu
 chy220@lehigh.edu
 
 ---
-This program is specified for my summer research purpose during 2019 in Sinclair Lab, Lehigh University.
+This program is specified for the summer research purpose during 2019 in Sinclair Lab, Lehigh University.
+It's not guaranteed the program will work elsewhere but it still worth a shot.
+Data process follows the specific standard given by the instructors.
+
 ---
 
 Run the main.m to proceed.
