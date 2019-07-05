@@ -34,5 +34,10 @@ function process_fx(filename)
 
     lineBreak;
     disp('Data process finish!')
+    
+    doneName = extractBefore(filename,'_Processing.xlsx');
+    doneName = sprintf('%s_Processed.xlsx',doneName);
+    
+    movefile (filename,doneName);
 
 end
