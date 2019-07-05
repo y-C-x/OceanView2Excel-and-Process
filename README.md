@@ -1,8 +1,10 @@
-OceanView2Excel and Process Ver.8 2019.7.4
+OceanView2Excel and Process Ver.8.1 2019.7.5
 
 Chengxin Yu
 
 chy220@lehigh.edu
+
+
 
 ---
 This program is specified for the summer research purpose during 2019 in Sinclair Lab, Lehigh University.
@@ -10,6 +12,16 @@ It's not guaranteed the program will work elsewhere but it still worth a shot.
 Data process follows the specific standard given by the instructors.
 
 ---
+
+
+update Ver. 8.1
+=================================
+New feature:
+
+Allow users to rewrite the data during measurement if they miss or copy the wrong 
+data from Ocean View
+
+==================================
 
 Run the main.m to proceed.
 
