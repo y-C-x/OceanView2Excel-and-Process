@@ -1,4 +1,4 @@
-function process_fx(filename)
+function process_fx(filename,power)
     
     exitMsg = 'Program terminated by the user.';
 %     filename = 'data.xlsx';
@@ -18,7 +18,7 @@ function process_fx(filename)
 
     lineBreak;
     % fft calculation for all sheet
-    pl_fft_all_fx_ch(filename,wavRange);
+    wavRange = pl_fft_all_fx_ch(filename,wavRange);
 
     lineBreak;
     % fft integral for all sheet
@@ -30,7 +30,7 @@ function process_fx(filename)
 
     lineBreak;
     % fill out the second table
-    calculation_table2(filename);
+    calculation_table2(filename,power);
 
     lineBreak;
     disp('Data process finish!')
@@ -39,5 +39,4 @@ function process_fx(filename)
     doneName = sprintf('%s_Processed.xlsx',doneName);
     
     movefile (filename,doneName);
-
 end

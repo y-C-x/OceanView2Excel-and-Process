@@ -1,16 +1,22 @@
-function pl_fft_all_fx_ch(filename,wavRange)
-    
+function wavR = pl_fft_all_fx_ch(filename,wavRange)
+
     disp('Calculating fft for all sheet...')
+    
+    [wavR,fftN] = pl_fft_fx_ch(filename,wavRange);
+    
+    wavRange = wavR;
     
     intCRange = strrep(wavRange,'a','c');
     fftRange = strrep(wavRange,'a','d');
-    
-    fftN = pl_fft_fx_ch(filename,wavRange);
     
     startN = fftN(1);
     endN = fftN(2);
     
     [~,sheets]=xlsfinfo(filename);
+    
+    str = cell(1,2);
+    str{1,1} = 'p_int(max)';
+    str{1,2} = 'nfft(max)';
 
     for h=3:length(sheets)
         name = sheets{h};
@@ -19,8 +25,8 @@ function pl_fft_all_fx_ch(filename,wavRange)
         X=xlsread(filename,name,wavRange);
         Y=xlsread(filename,name,intCRange);
         
-        cleanColumn = cell(1045,1);
-        xlswrite(filename,cleanColumn,name,'d1:d1045');
+%         cleanColumn = cell(1045,1);
+%         xlswrite(filename,cleanColumn,name,'d1:d1045');
 
         Z = fft(Y);
         
@@ -32,10 +38,6 @@ function pl_fft_all_fx_ch(filename,wavRange)
         YY = ifft(Z);
         
         xlswrite(filename,abs(YY),name,fftRange);
-        
-        str = cell(1,2);
-        str{1,1} = 'p_int(max)';
-        str{1,2} = 'nfft(max)';
 
         p_int=max(abs(YY));
         xlswrite(filename,str(1,1),name,'l1');

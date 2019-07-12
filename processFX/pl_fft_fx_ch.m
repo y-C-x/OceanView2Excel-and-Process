@@ -1,6 +1,8 @@
-function fftN = pl_fft_fx_ch(filename,wavRange)
+function [wavR,fftN] = pl_fft_fx_ch(filename,wavRange)
 
     intCRange = strrep(wavRange,'a','c');
+    
+    wavR = wavRange;
 
     % startPos = extractBefore(wavRange,':');
     % startPos = extractAfter(startPos,'a');
@@ -48,7 +50,9 @@ function fftN = pl_fft_fx_ch(filename,wavRange)
     plot(X,abs(YY),'b',X,Y,'r');
 
     confirm = 0;
-
+    
+    disp('Type CWR to change waveLength Range');
+    
     while ~confirm
         cmd = input('Confirm this fft (Y/N)? ','s');
         if strcmp(cmd,'Y') || strcmp(cmd,'y')
@@ -66,6 +70,10 @@ function fftN = pl_fft_fx_ch(filename,wavRange)
             YY = ifft(Z);
             subplot(2,2,[2 4])
             plot(X,abs(YY),'b',X,Y,'r');
+        elseif strcmp(cmd,'CWR')    
+            wavR = input('change the wavLeng range to process (a..:a..): ','s');
+            [wavR,fftN] = pl_fft_fx_ch(filename,wavR);
+            return;
         else
             disp('Give correct ans plz');
         end
