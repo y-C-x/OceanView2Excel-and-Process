@@ -26,6 +26,7 @@ Now, users can type in 'CWR' when the program asks 'Confirm this fft (y/n)?'.
 
 Also it allows users to continuously process files without rerunning the program for each file.
 
+---
 
 update Ver. 8.1 & 8.2
 
