@@ -1,4 +1,4 @@
-OceanView2Excel and Process Ver.8.2 2019.7.5
+OceanView2Excel and Process Ver.8.6.2 2019.7.12
 
 Chengxin Yu
 
@@ -13,11 +13,24 @@ Data process follows the specific standard given by the instructors.
 
 ---
 
+update Ver. 8.6.2
+
+---
+New features:
+
+(some previous upadte information is missing here....)
+
+In Ver. 8.6.2, I add a new option for users to change the wave length range during running the 
+program while in the past one needs to terminate the whole program to change the wave length range.
+Now, users can type in 'CWR' when the program asks 'Confirm this fft (y/n)?'.
+
+Also it allows users to continuously process files without rerunning the program for each file.
+
 
 update Ver. 8.1 & 8.2
 
 ---
-New feature:
+New features:
 
 * Allow users to rewrite the data during measurement if they miss or copy the wrong 
 data from Ocean View
