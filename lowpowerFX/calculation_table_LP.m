@@ -1,4 +1,4 @@
-function calculation_table(filename,currentSet)
+function calculation_table(filename,currentTitle)
    
     title = cell(1,11);
     title{1,1} = 'Current (mA)';
@@ -22,11 +22,17 @@ function calculation_table(filename,currentSet)
 %     for i = 1 : setNum-1
 %         currentCell = sprintf('a%d',i+1);
 % %         beamCell = sprintf('c%d',i+1);
-%         xlswrite(filename,currentSet(i+1),'Calculation',currentCell);
+%         xlswrite(filename,currentSet{1,i+1},'Calculation',currentCell);
 % %         xlswrite(filename,beamDiameter,'Calculation',beamCell);
 %     end
-    
-    xlswrite(filename,currentSet','Calculation','a2');
+%     
+
+    currentSet = cell(length(currentTitle),1);
+    for i = 2 : length(currentTitle)
+        currentSet{i-1,1} = strrep(currentTitle{i,1},' mA','');
+    end
+
+    xlswrite(filename,currentSet,'Calculation','a2');
     
     
     disp('Calculation sheet initialized')

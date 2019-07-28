@@ -32,16 +32,26 @@ function pl_correct_int(filename)
 
     % this reads everything in a given sheet.
     % sheetnames = readtable('data.xlsx','sheet',name)
+    
+    formula{1,1} = 'correct int';
+    for index = 2 : 1045
+        formula{index,1} = sprintf('=B%d-''0 mA''!B%d',index,index);
+    end
 
 
-    str = cell(1);
-    str{1} = 'correct int';
+%     str = cell(1);
+%     str{1} = 'correct int';
+% 
+%     for index = 3 : length(sheetnames)
+%         xlswrite(filename,str(1), sheetnames{index}, 'c1')
+%         table(:,index-1) = xlsread(filename,sheetnames{index},'b2:b1045');
+%         correctedInt(:,index-2) = table(:,index-1) - table(:,1);
+%         xlswrite(filename,correctedInt(:,index-2), sheetnames{index},'c2:c1045')
+%     end
+%     
 
     for index = 3 : length(sheetnames)
-        xlswrite(filename,str(1), sheetnames{index}, 'c1')
-        table(:,index-1) = xlsread(filename,sheetnames{index},'b2:b1045');
-        correctedInt(:,index-2) = table(:,index-1) - table(:,1);
-        xlswrite(filename,correctedInt(:,index-2), sheetnames{index},'c2:c1045')
+        xlswrite(filename,formula, sheetnames{index}, 'c1')
     end
     
     disp('correct_int written')
