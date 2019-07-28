@@ -1,4 +1,5 @@
-OceanView2Excel and Process Ver.8.6.2 2019.7.12
+OceanView2Excel and Process Ver.10.0
+2019.7.28
 
 Chengxin Yu
 
@@ -12,6 +13,15 @@ It's not guaranteed the program will work elsewhere but it still worth a shot.
 Data process follows the specific standard given by the instructors.
 
 ---
+
+update Ver. 10
+
+---
+
+New features:
+
+Support the measurement udner low power density.
+Bugs fixed.
 
 update Ver. 8.6.2
 
